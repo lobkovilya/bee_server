@@ -12,6 +12,8 @@ import java.util.List;
  */
 @RepositoryRestResource(collectionResourceRel = "product", path = "product")
 public interface ProductRepository extends MongoRepository<Product, String>{
-    List<Product> findByCategory(@Param("category") Category category);
+//    List<Product> findByCategory(@Param("category") Category category);
     Product findByName(@Param("name") String name);
+    Product findById(@Param("id") String id);
+    List<Product> findByCategoryID(@Param("categoryID") String categoryID);
 }

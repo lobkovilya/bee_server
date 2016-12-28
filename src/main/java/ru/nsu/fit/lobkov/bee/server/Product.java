@@ -9,15 +9,18 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 public class Product {
     @Id
     public String id;
-    @DBRef
-    public Category category;
+    public String categoryID;
     public String name;
     public Double averageRate;
+    public String organisation;
+    public String imageURL;
 
-    public Product(Category category, String name, Double averageRate) {
-        this.category = category;
+    public Product(String categoryID, String name, Double averageRate, String organisation, String imageURL) {
+        this.categoryID = categoryID;
         this.name = name;
         this.averageRate = averageRate;
+        this.organisation = organisation;
+        this.imageURL = imageURL;
     }
 
     public Product() {

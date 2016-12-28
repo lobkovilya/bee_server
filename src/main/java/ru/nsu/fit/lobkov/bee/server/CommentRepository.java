@@ -9,5 +9,6 @@ import java.util.List;
  * Created by Lobkov on 27.12.2016.
  */
 public interface CommentRepository extends MongoRepository<Comment, String> {
-    List<Comment> findByProduct(@Param("product") Product product);
+//    List<Comment> findByProduct(@Param("product") Product product);
+    List<Comment> findByProductID(@Param("productID") String productID);
 }

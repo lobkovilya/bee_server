@@ -9,13 +9,12 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 public class Comment {
     @Id
     public String id;
-    @DBRef
-    public Product product;
+    public String productID;
     public String text;
     public String userName;
 
-    public Comment(Product product, String text, String userName) {
-        this.product = product;
+    public Comment(String productID, String text, String userName) {
+        this.productID = productID;
         this.text = text;
         this.userName = userName;
     }

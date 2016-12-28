@@ -34,20 +34,19 @@ public class CategoryController {
         return HttpStatus.OK;
     }
 
-
     @RequestMapping("/products")
-    public List<Product> getProducts(@RequestParam(name = "category") String categoryName) {
-        Category category = categoryRepository.findByName(categoryName);
-        return productRepository.findByCategory(category);
+    public List<Product> getProducts(@RequestParam(name = "category_id") String categoryID) {
+//        Category category = categoryRepository.findByName(categoryName);
+        return productRepository.findByCategoryID(categoryID);
     }
 
     @RequestMapping("/comments")
-    public List<Comment> getComments(@RequestParam(name = "product") String productName) {
+    public List<Comment> getComments(@RequestParam(name = "product_id") String productID) {
 //        Product p = productRepository.findByName("Latte");
 //        Comment c = new Comment(p, "Very good!", "Roman");
 //        commentRepository.save(c);
-        Product product = productRepository.findByName(productName);
-        return commentRepository.findByProduct(product);
+//        Product product = productRepository.findById(productID);
+        return commentRepository.findByProductID(productID);
     }
 
 //    @RequestMapping(value = "/product", method = RequestMethod.POST)
